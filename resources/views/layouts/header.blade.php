@@ -16,7 +16,7 @@
         <div class="container d-flex justify-content-between">
             <a href="{{ route('home')}}"" class="navbar-brand d-flex align-items-center">
                 <img src="{{asset('img/voiture.png')}}" width="30" height="30" alt="">
-                <strong>Location de voiture</strong>
+                <strong>Location de vehicule</strong>
             </a>
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -27,4 +27,19 @@
             </ul>
         </div>
     </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Categorie</a>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav justify-content-center">
+            @foreach ($categories as $category)
+            <li class="nav-item active">
+                <a class="nav-link" href="#">{{$category->nom}}</a>
+            </li>
+            @endforeach
+          </ul>
+        </div>
+      </nav>
+
+
+
 </header>
