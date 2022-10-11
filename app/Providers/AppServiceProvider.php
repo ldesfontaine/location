@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Http\ViewComposers\HeaderComposer;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,5 +25,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        view()->composer(['shop','home'], callback:HeaderComposer::class);
     }
 }

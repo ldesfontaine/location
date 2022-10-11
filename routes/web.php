@@ -21,3 +21,5 @@ use App\Http\Controllers\Shop\MainController;
 Route::get('/', [MainController::class, 'index'])->name('home') ;
 
 Route::get('/produit/{id}', [MainController::class, 'produit'])->name('voir_plus');
+
+Route::get('/categorie', [MainController::class, 'ShowCategorie']);
