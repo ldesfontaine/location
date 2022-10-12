@@ -20,6 +20,6 @@ use App\Http\Controllers\Shop\MainController;
 
 Route::get('/', [MainController::class, 'index'])->name('home') ;
 
-Route::get('/produit/{id}', [MainController::class, 'produit'])->name('voir_plus');
+Route::get('/vehicule/{id}', [MainController::class, 'vehicule'])->name('voir_plus');
 
-Route::get('/categorie', [MainController::class, 'ShowCategorie']);
+Route::get('/type/{id}', [MainController::class, 'ShowType'])->name('voir_type_categorie');

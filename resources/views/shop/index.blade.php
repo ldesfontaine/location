@@ -12,6 +12,7 @@
                 <img class="card-img-top"src="{{asset('produits/'. $vehicule->photo_principal)}}" alt="Card image cap">
                 <div class="card-body">
                     <p class="card-text">{{$vehicule->nom}} <br>{{$vehicule->description}}</p>
+                        <a href="{{route('voir_type_categorie',['id'=>$vehicule->type->id])}}}}" class="badge badge-light">{{$vehicule->type->nom}}</a>
                     <div class="d-flex justify-content-between align-items-center">
                         <span class="price">{{$vehicule->prix_ht}}€</span>
                         <a href="{{ route('voir_plus',['id'=>$vehicule->id]) }}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i></a>

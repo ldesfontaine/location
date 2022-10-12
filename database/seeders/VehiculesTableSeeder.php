@@ -27,6 +27,7 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->boite_vitesse = 'Manuelle';
         $vehicule->couleur = 'Blanc';
         $vehicule->plaque = 'AB-123-CD';
+        $vehicule->type_id = 1;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -41,6 +42,7 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->boite_vitesse = 'Automatique';
         $vehicule->couleur = 'Blanc';
         $vehicule->plaque = 'CD-456-EF';
+        $vehicule->type_id = 1;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -55,6 +57,7 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->boite_vitesse = 'Manuelle';
         $vehicule->couleur = 'Gris';
         $vehicule->plaque = 'HJ-789-IK';
+        $vehicule->type_id = 1;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -69,6 +72,7 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->boite_vitesse = 'Manuelle';
         $vehicule->couleur = 'Noir';
         $vehicule->plaque = 'BF-123-CD';
+        $vehicule->type_id = 1;
         $vehicule->save();
 
 
@@ -84,6 +88,7 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->boite_vitesse = 'Manuelle';
         $vehicule->couleur = 'Gris';
         $vehicule->plaque = 'OD-258-EF';
+        $vehicule->type_id = 1;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -98,6 +103,7 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->boite_vitesse = 'Manuelle';
         $vehicule->couleur = 'Jaune';
         $vehicule->plaque = 'GH-456-IK';
+        $vehicule->type_id = 1;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -112,6 +118,7 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->boite_vitesse = 'Manuelle';
         $vehicule->couleur = 'Noir';
         $vehicule->plaque = 'JK-789-LM';
+        $vehicule->type_id = 1;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -126,6 +133,7 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->boite_vitesse = 'Manuelle';
         $vehicule->couleur = 'Noir';
         $vehicule->plaque = 'NO-123-OP';
+        $vehicule->type_id = 1;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -140,6 +148,7 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->boite_vitesse = 'Manuelle';
         $vehicule->couleur = 'Noir';
         $vehicule->plaque = 'GG-175-KM';
+        $vehicule->type_id = 1;
         $vehicule->save();
 
 
@@ -155,6 +164,7 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->boite_vitesse = 'Manuelle';
         $vehicule->couleur = 'Noir';
         $vehicule->plaque = 'GH-456-IK';
+        $vehicule->type_id = 2;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -169,6 +179,7 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->boite_vitesse = 'Manuelle';
         $vehicule->couleur = 'Rouge';
         $vehicule->plaque = 'GX-469-VK';
+        $vehicule->type_id = 2;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -183,6 +194,7 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->boite_vitesse = 'Manuelle';
         $vehicule->couleur = 'Noir';
         $vehicule->plaque = 'HU-422-PK';
+        $vehicule->type_id = 2;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -197,6 +209,7 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->boite_vitesse = 'Manuelle';
         $vehicule->couleur = 'Vert';
         $vehicule->plaque = 'JH-456-OK';
+        $vehicule->type_id = 2;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -211,6 +224,7 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->boite_vitesse = 'Manuelle';
         $vehicule->couleur = 'Orange';
         $vehicule->plaque = 'ZO-594-FJ';
+        $vehicule->type_id = 2;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -225,6 +239,7 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->boite_vitesse = 'Manuelle';
         $vehicule->couleur = 'Gris';
         $vehicule->plaque = 'SI-485-IS';
+        $vehicule->type_id = 2;
         $vehicule->save();
 
     }
