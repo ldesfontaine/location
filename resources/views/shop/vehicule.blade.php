@@ -4,7 +4,7 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('home')}}">Accueil</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Categorie</li>
+        <li class="breadcrumb-item active" aria-current="page">{{$vehicule->type->nom}}</li>
         <li class="breadcrumb-item active" aria-current="page">{{$vehicule->nom}}</li>
     </ol>
 </nav>
@@ -19,15 +19,47 @@
             <div class="col-6">
                 <div class="card mb-4 box-shadow">
                     <img class="card-img-top" src="{{asset('produits/'.$vehicule->photo_principal)}}" alt="Card image cap">
-
                 </div>
+                <p class="lead text-muted">{{$vehicule->description}}</p>
             </div>
             <div class="col-6">
 
-                <h1 class="jumbotron-heading">{{$vehicule->nom}}</h1>
-                <h5>{{$vehicule->prix_ht}}€</h5>
-                <p class="lead text-muted">{{$vehicule->description}}</p>
-
+                <h1 class="jumbotron-heading">{{$vehicule->nom}} -- {{$vehicule->prix_ht}}€</h1>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Caractéristique</th>
+                            <th scope="col">{{$vehicule->type->nom}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Carburant</th>
+                            <td>{{$vehicule->carburant}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Boite de vitesse</th>
+                            <td>{{$vehicule->boite_vitesse}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Couleur</th>
+                            <td>{{$vehicule->couleur}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Places</th>
+                            <td>{{$vehicule->places}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Roues</th>
+                            <td>{{$vehicule->roues}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Imatriculation</th>
+                            <td>{{$vehicule->plaque}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
             </div>
         </div>
     </div>
