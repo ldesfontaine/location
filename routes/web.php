@@ -14,9 +14,9 @@ use App\Http\Controllers\Shop\MainController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+ Route::get('/welcome', function () {
+     return view('welcome');
+ });
 
 Route::get('/', [MainController::class, 'index'])->name('home') ;
 

@@ -1,13 +1,11 @@
 @extends('shop')
-
 @section('content')
+
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('home')}}">Accueil</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Categorie</li>
+        <li class="breadcrumb-item active" aria-current="page">{{$vehicules[1]->type->nom}}</li>
     </ol>
-</nav>
-
 <div class="row">
 @foreach ($vehicules as $vehicule)
     <div class="col-md-4">
@@ -24,11 +22,5 @@
     </div>
 @endforeach
 </div>
-
-
-
-
-
-
-
 @endsection
+

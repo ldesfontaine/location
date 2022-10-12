@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-sm-8 col-md-7 py-4">
                     <h4 class="text-white">A propos</h4>
-                    <p class="text-info">Nous sommes une agence de location de voitures, nous vous proposons des voitures de toutes marques et de toutes catégories.</p>
+                    <p class="text-info">Nous sommes une agence de location de vehicule, nous vous proposons des vehicules  de toutes marques et de toutes catégories.</p>
                 </div>
                 <div class="col-sm-4 offset-md-1 py-4">
                     <a href="#" class="btn btn-primary my-2">Se connecter</a>
@@ -39,7 +39,5 @@
           </ul>
         </div>
       </nav>
-
-
 
 </header>
