@@ -28,12 +28,12 @@
         </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Categorie</a>
+        <a class="navbar-brand">Type de véhicule</a>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav justify-content-center">
-            @foreach ($categories as $category)
+            @foreach ($types as $type)
             <li class="nav-item active">
-                <a class="nav-link" href="#">{{$category->nom}}</a>
+                <a class="nav-link" href="{{route('voir_type_categorie',['id'=>$type->id])}}">{{$type->nom}}</a>
             </li>
             @endforeach
           </ul>
