@@ -14,7 +14,7 @@
     </div>
     <div class="navbar navbar-dark bg-dark box-shadow">
         <div class="container d-flex justify-content-between">
-            <a href="{{ route('home')}}"" class="navbar-brand d-flex align-items-center">
+            <a href="{{ route('home')}}" class="navbar-brand d-flex align-items-center">
                 <img src="{{asset('img/voiture.png')}}" width="30" height="30" alt="">
                 <strong>Location de vehicule</strong>
             </a>
