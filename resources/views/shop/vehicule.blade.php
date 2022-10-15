@@ -4,7 +4,7 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('home')}}">Accueil</a></li>
-        <li class="breadcrumb-item active" aria-current="page">{{$vehicule->type->nom}}</li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="{{route('voir_type_categorie',['id'=>$vehicule->type])}}">{{$vehicule->type->nom}}</a></li>
         <li class="breadcrumb-item active" aria-current="page">{{$vehicule->nom}}</li>
     </ol>
 </nav>
