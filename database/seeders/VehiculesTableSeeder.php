@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Vehicule;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class VehiculesTableSeeder extends Seeder
 {
