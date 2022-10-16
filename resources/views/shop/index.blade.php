@@ -6,7 +6,7 @@
         <div class="row">
 
             @foreach ($vehicules->shuffle(1) as $vehicule)
-            {{-- {{dump($produits)}} --}}
+            {{-- {{dd($vehicules)}} --}}
             <div class="col-md-4">
                 <div class="card mb-4 box-shadow">
                 <img class="card-img-top"src="{{asset('produits/'. $vehicule->photo_principal)}}" alt="Card image cap">

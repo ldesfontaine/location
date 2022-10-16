@@ -2,20 +2,56 @@
 @if (Auth::user()->admin == 1)
 <x-app-layout>
     <x-slot name="header">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Administrateur') }}
         </h2>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="{{ route('create')}}" class="btn btn-primary">Ajouter un vehicule</a>
+
+                <div>
+                    <div class="p-6 bg-white border-b border-gray-200">
+                        <a href="{{ route('create')}}" class="btn btn-primary">Ajouter un vehicule</a>
+                    </div>
+
+                    <div class="p-6 bg-white border-b border-gray-200">
+                        <a href="/" class="btn btn-primary">Modifier ou supprimer un vehicule</a>
+                    </div>
                 </div>
 
+                <hr>
+
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="/" class="btn btn-primary">Modifier ou supprimer un vehicule</a>
+                    <table class="table table-striped ">
+                        <thead>
+                            <span>Utilisateurs</span>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Admin</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{-- {{dd($users)}} --}}
+                            @foreach ($users as $user)
+                            <tr>
+                                <th scope="row">{{ $user->id }}</th>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>{{ $user->admin == 1 ? 'Oui' : 'Non' }}</td>
+                                <td>
+                                    <a href="{{ route('UserEdit', $user->id) }}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
+                                    <a href="{{ route('deleteUser', $user->id) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                 </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

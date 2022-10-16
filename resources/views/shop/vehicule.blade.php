@@ -57,6 +57,16 @@
                             <th scope="row">Imatriculation</th>
                             <td>{{$vehicule->plaque}}</td>
                         </tr>
+                        <tr>
+                            <th scope="row">Action</th>
+                            <td>
+                                @auth
+                                @if (Auth::user()->admin == 1)
+                                <a href="{{route('delete',['id'=>$vehicule->id])}}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-trash"></i></a>
+                                <a href="{{route('edit',['id'=>$vehicule->id])}}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-pen"></i></a>
+                                @endif
+                                @endauth
+                            </td>
                     </tbody>
                 </table>
                 <hr>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Shop\MainController;
 use Illuminate\Support\Facades\Auth;
@@ -33,6 +34,14 @@ Route::middleware(['auth','admin'])->group(function(){
     Route::post('/edit/{id}', [MainController::class, 'update'])->name('update');
 
     Route::get('/delete/{id}', [MainController::class, 'destroy'])->name('delete');
+
+
+    Route::get('/editUser/{id}', [AdminController::class, 'edit'])->name('UserEdit');
+    Route::post('/editUser/{id}', [AdminController::class, 'update'])->name('updateUser');
+
+    Route::get('/deleteUser/{id}', [AdminController::class, 'destroy'])->name('deleteUser');
+
+
 });
 
 
