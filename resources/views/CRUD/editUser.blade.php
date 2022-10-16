@@ -17,6 +17,10 @@
                 <input type="email" class="form-control" name="email" id="email" value="{{ $user->email }}">
             </div>
             <div class="form-group">
+                <label for="pwd">Mot de passe</label>
+                <input type="password" class="form-control" name="pwd" id="pwd" value="coucou">
+            </div>
+            <div class="form-group">
                 <label for="role">Role</label>
                 <select class="form-control" name="role" id="role" value="{{$user->admin}}">
                     @if ($user->admin == 1)

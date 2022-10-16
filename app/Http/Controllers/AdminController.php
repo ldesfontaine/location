@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -16,6 +17,7 @@ class AdminController extends Controller
         $user = User::find($id);
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->password =  Hash::make($request->pwd);
         $user->admin = $request->role;
         $user->save();
         return redirect('/');

@@ -24,7 +24,7 @@
 
         <section class="py-5 text-center">
             <div class="container">
-                <h1 class="jumbotron-heading">Trouver votre <span class="badge badge-light">nouveaux</span> vehicule !</h1>
+                <h1 class="jumbotron-heading">Trouver votre vehicule !</h1>
                 <p class="lead text-muted">Voici notre catalogue</p>
 
             </div>
