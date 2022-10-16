@@ -23,3 +23,11 @@ Route::get('/', [MainController::class, 'index'])->name('home') ;
 Route::get('/vehicule/{id}', [MainController::class, 'vehicule'])->name('voir_plus');
 
 Route::get('/type/{id}', [MainController::class, 'ShowType'])->name('voir_type_categorie');
+
+Route::get('/create', [MainController::class, 'create'])->name('create');
+Route::post('/create', [MainController::class, 'store'])->name('store');
+
+Route::get('/edit/{id}', [MainController::class, 'edit'])->name('edit');
+Route::post('/edit/{id}', [MainController::class, 'update'])->name('update');
+
+Route::get('/delete/{id}', [MainController::class, 'destroy'])->name('delete');
