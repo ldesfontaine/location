@@ -18,8 +18,8 @@
                         <div>
                             @auth
                             @if (Auth::user()->admin == 1)
-                            <a href="{{route('delete',['id'=>$vehicule->id])}}" class="btn btn-sm btn-outline-secondary">D</a>
-                            <a href="{{route('edit',['id'=>$vehicule->id])}}" class="btn btn-sm btn-outline-secondary">E</a>
+                            <a href="{{route('delete',['id'=>$vehicule->id])}}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-trash"></i></a>
+                            <a href="{{route('edit',['id'=>$vehicule->id])}}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-pen"></i></a>
                             @endif
                             @endauth
                             <a href="{{ route('voir_plus',['id'=>$vehicule->id]) }}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i></a>
