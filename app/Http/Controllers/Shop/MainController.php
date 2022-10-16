@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Shop;
 
 use App\Models\Vehicule;
-use App\Models\Type;//passe par le provider AppServiceProvider
 use Illuminate\Http\Request;
+use function PHPSTORM_META\type;
 use App\Http\Controllers\Controller;
 
-use function PHPSTORM_META\type;
+use Illuminate\Support\Facades\Redirect;
+use App\Models\Type;//passe par le provider AppServiceProvider
 
 class MainController extends Controller
 {
@@ -59,7 +60,7 @@ class MainController extends Controller
         $vehicule->plaque = $request->immatriculation;
         $vehicule->type_id = $request->categorie;
         $vehicule->save();
-        return 'vehicule add';
+        return Redirect::to('/');
     }
 
         public function edit($id)
@@ -84,14 +85,18 @@ class MainController extends Controller
         $vehicule->plaque = $request->immatriculation;
         $vehicule->type_id = $request->categorie;
         $vehicule->save();
-        return 'vehicule update';
+
+        return Redirect::to('/');
     }
 
     public function destroy($id)
     {
         $vehicule = Vehicule::find($id);
         $vehicule->delete();
-        return 'vehicule delete';
+        return Redirect::to('/');
     }
+
+
+
 
 }

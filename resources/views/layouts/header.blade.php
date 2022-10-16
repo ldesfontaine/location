@@ -6,9 +6,30 @@
                     <h4 class="text-white">A propos</h4>
                     <p class="text-info">Nous sommes une agence de location de vehicule, nous vous proposons des vehicules  de toutes marques et de toutes catégories.</p>
                 </div>
-                <div class="col-sm-4 offset-md-1 py-4">
-                    <a href="#" class="btn btn-primary my-2">Se connecter</a>
+                @if (Route::has('login'))
+                @auth
+                <div class="col col-lg-2">
+                    @if (Auth::user()->admin == 1)
+                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+                    @endif
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <x-dropdown-link :href="route('logout')"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('Log Out') }}
+                            </x-dropdown-link>
+                        </form>
+                    @else
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                        @endif
+                    @endauth
                 </div>
+            @endif
             </div>
         </div>
     </div>
