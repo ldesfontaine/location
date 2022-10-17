@@ -1,8 +1,11 @@
-@extends('shop')
-@section('content')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __("Ajouter un vehicule") }}
+        </h2>
+    </x-slot>
 
-<div class="container">
-        <h1>Ajouter un vehicule</h1>
+<div class="container max-w-7xl mx-auto sm:px-6 lg:px-8">
         <form action="" method="POST">
             @csrf
         <div class="form-group">
@@ -71,4 +74,5 @@
         <button type="submit" class="btn btn-primary">Ajouter</button>
 
     </div>
-@endsection
+</x-app-layout>
+

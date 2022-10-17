@@ -9,7 +9,7 @@
             {{-- {{dd($vehicules)}} --}}
             <div class="col-md-4">
                 <div class="card mb-4 box-shadow">
-                <img class="card-img-top"src="{{asset('produits/'. $vehicule->photo_principal)}}" alt="Card image cap">
+                <img class="card-img-top"src="{{asset('vehicule/'. $vehicule->photo_principal)}}" alt="Card image cap">
                 <div class="card-body">
                     <p class="card-text">{{$vehicule->nom}} <br>{{$vehicule->description}}</p>
                         <a href="{{route('voir_type_categorie',['id'=>$vehicule->type->id])}}}}" class="badge badge-light">{{$vehicule->type->nom}}</a>

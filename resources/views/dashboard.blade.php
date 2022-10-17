@@ -11,17 +11,11 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-
-                <div>
                     <div class="p-6 bg-white border-b border-gray-200">
                         <a href="{{ route('create')}}" class="btn btn-primary">Ajouter un vehicule</a>
-                    </div>
-
-                    <div class="p-6 bg-white border-b border-gray-200">
+                        <br>
                         <a href="/" class="btn btn-primary">Modifier ou supprimer un vehicule</a>
                     </div>
-                </div>
-
                 <hr>
 
                 <div class="p-6 bg-white border-b border-gray-200">
@@ -50,12 +44,50 @@
                                  </td>
                             </tr>
                             @endforeach
+                            <br>
+                            <span> Ajouter <a href="{{ route('createUser', $user->id) }}" class="btn btn-danger"><i class="fa-solid fa-plus"></i></a></span>
                         </tbody>
                     </table>
                 </div>
+
+                <hr>
+
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <table class="table table-striped ">
+                        <thead>
+                            <span>Types</span>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Actif</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{-- {{dd($types)}} --}}
+                            @foreach ($types as $type)
+
+                            <tr>
+                                <th scope="row">{{ $type->id }}</th>
+                                <td>{{ $type->nom }}</td>
+                                <td>{{ $type->actif == 1 ? 'Oui' : 'Non' }}</td>
+                                <td>
+                                    <a href="{{ route('editType', $type->id) }}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
+                                    <a href="{{ route('deleteType', $type->id) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            @endforeach
+                            <br>
+                            <span> Ajouter <a href="{{ route('createType', $type->id) }}" class="btn btn-danger"><i class="fa-solid fa-plus"></i></a></span>
+                        </tbody>
+                    </table>
+
+
             </div>
         </div>
+
     </div>
+
 </x-app-layout>
 @else
 <script>window.location = "/";</script>
