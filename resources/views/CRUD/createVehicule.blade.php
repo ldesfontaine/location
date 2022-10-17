@@ -6,7 +6,7 @@
     </x-slot>
 
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <form action="" method="POST">
+        <form action="" method="POST" enctype="multipart/form-data">
             @csrf
         <div class="form-group">
             <label for="marque">Nom</label>
@@ -56,9 +56,23 @@
             <input type="text" class="form-control" name="description" id="description" placeholder="Description">
         </div>
         <div class="form-group">
-            <label for="image">Image</label>
-            <input type="text" class="form-control" name="image" id="image" placeholder="Image = lien de l'image">
+            <div class="col-sm-4">
+                <label for="image" class="col-sm-2 col form-label">Image</label>
+                <input type="file" class="form-control form-control-sm" id="image" name="image" accept="image/png, image/jpeg, image/jpg">
+            </div>
         </div>
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
+
+
         <div class="form-group">
             <label for="categorie">Categorie</label>
             <select class="form-control" name="categorie" id="categorie">

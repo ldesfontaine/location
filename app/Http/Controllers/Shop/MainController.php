@@ -13,7 +13,6 @@ use App\Models\Type;//passe par le provider AppServiceProvider
 class MainController extends Controller
 {
 
-
     public function index()
     {
         $vehicules = \App\Models\Vehicule::with('type')->get();
@@ -59,15 +58,30 @@ class MainController extends Controller
         $vehicule->couleur = $request->couleur;
         $vehicule->plaque = $request->immatriculation;
         $vehicule->type_id = $request->categorie;
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+        if($file = $request->hasFile('image')) {
+            $file = $request->file('image') ;
+            $fileName = $file->getClientOriginalName() ;
+
+            $destinationPath = public_path().'/vehicule' ;
+            $file->move($destinationPath,$fileName);
+            $vehicule->photo_principal = $fileName;
+        }
         $vehicule->save();
         return Redirect::to('/');
     }
+
+
 
         public function edit($id)
     {
         $vehicule = Vehicule::find($id);
         return view('CRUD.editVehicule',compact('vehicule'));
     }
+
+
 
     public function update(Request $request, $id)
     {
@@ -84,6 +98,17 @@ class MainController extends Controller
         $vehicule->couleur = $request->couleur;
         $vehicule->plaque = $request->immatriculation;
         $vehicule->type_id = $request->categorie;
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+        if($file = $request->hasFile('image')) {
+            $file = $request->file('image') ;
+            $fileName = $file->getClientOriginalName() ;
+
+            $destinationPath = public_path().'/vehicule' ;
+            $file->move($destinationPath,$fileName);
+            $vehicule->photo_principal = $fileName;
+        }
         $vehicule->save();
 
         return Redirect::to('/');

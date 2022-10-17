@@ -40,7 +40,7 @@
                                 <td>{{ $user->admin == 1 ? 'Oui' : 'Non' }}</td>
                                 <td>
                                     <a href="{{ route('UserEdit', $user->id) }}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
-                                    <a href="{{ route('deleteUser', $user->id) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                    <a  onclick="return confirm('Êtes-vous sûrs ?')" href="{{ route('deleteUser', $user->id) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                                  </td>
                             </tr>
                             @endforeach
@@ -55,7 +55,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table class="table table-striped ">
                         <thead>
-                            <span>Types</span>
+                            <span>Types de véhicule</span>
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Nom</th>
@@ -73,7 +73,7 @@
                                 <td>{{ $type->actif == 1 ? 'Oui' : 'Non' }}</td>
                                 <td>
                                     <a href="{{ route('editType', $type->id) }}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
-                                    <a href="{{ route('deleteType', $type->id) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                    <a onclick="return confirm('Êtes-vous sûrs ?')" href="{{ route('deleteType', $type->id) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
                             @endforeach

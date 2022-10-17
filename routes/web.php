@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\Shop\MainController;
-use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,7 +47,8 @@ Route::middleware(['auth','admin'])->group(function(){
     Route::post('/editType/{id}', [AdminController::class, 'updateType'])->name('updateType');
     Route::get('/deleteType/{id}', [AdminController::class, 'destroyType'])->name('deleteType');
 
-
+    Route::get('/uploadfile', [ImageController::class,'index']);
+    Route::post('/uploadfile', [ImageController::class,'store']);
 });
 
 

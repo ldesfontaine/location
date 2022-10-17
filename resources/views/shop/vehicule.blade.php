@@ -62,7 +62,7 @@
                             <td>
                                 @auth
                                 @if (Auth::user()->admin == 1)
-                                <a href="{{route('delete',['id'=>$vehicule->id])}}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-trash"></i></a>
+                                <a onclick="return confirm('Êtes-vous sûrs ?')" href="{{route('delete',['id'=>$vehicule->id])}}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-trash"></i></a>
                                 <a href="{{route('edit',['id'=>$vehicule->id])}}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-pen"></i></a>
                                 @endif
                                 @endauth
@@ -92,7 +92,7 @@
                             <div>
                                 @auth
                                 @if (Auth::user()->admin == 1)
-                                <a href="{{route('delete',['id'=>$vehicule->id])}}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-trash"></i></a>
+                                <a onclick="return confirm('Êtes-vous sûrs ?')" href="{{route('delete',['id'=>$vehicule->id])}}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-trash"></i></a>
                                 <a href="{{route('edit',['id'=>$vehicule->id])}}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-pen"></i></a>
                                 @endif
                                 @endauth
