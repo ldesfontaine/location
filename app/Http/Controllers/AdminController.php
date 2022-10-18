@@ -43,9 +43,14 @@ class AdminController extends Controller
 
     public function update(Request $request, $id){
         $user = User::find($id);
+        $oldPassword = $user->password;
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password =  Hash::make($request->pwd);
+        if($request->pwd == null){
+            $user->password = $oldPassword;}
+        else{
+            $user->password = Hash::make($request->pwd);}
+
         $user->admin = $request->role;
         $user->save();
         return redirect()->route('dashboard');
