@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\contactController;
-use App\Http\Controllers\ImageController;
 use App\Http\Controllers\Shop\MainController;
 
 /*

@@ -108,11 +108,13 @@ class MainController extends Controller
     public function update(Request $request, $id)
     {
         $vehicule = Vehicule::find($id);
+        $oldImage = $vehicule->photo_principal;
         $vehicule->nom = $request->Nom;
         $vehicule->marque = $request->marque;
         $vehicule->prix_ht = $request->Prix_HT;
         $vehicule->description = $request->description;
-        $vehicule->photo_principal = $request->image;
+        if($request->image == null){
+            $vehicule->photo_principal = $oldImage;}
         $vehicule->roues = $request->Roue;
         $vehicule->places = $request->Place;
         $vehicule->carburant = $request->carburant;
@@ -124,14 +126,12 @@ class MainController extends Controller
 
 
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg|max:2048',
         ]);
-
         $image_path = public_path().'/vehicule/'.$vehicule->photo_principal;
         if(File::exists($image_path)) {
             File::delete($image_path);
         }
-
 
         if($file = $request->hasFile('image')) {
             File::delete($image_path);
