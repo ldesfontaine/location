@@ -63,6 +63,10 @@ class AdminController extends Controller
     }
 
     public function store(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'actif' => 'required',
+        ]);
         $type = new Type();
         $type->nom = $request->name;
         $type->actif = $request->actif;

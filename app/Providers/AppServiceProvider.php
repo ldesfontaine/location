@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\ViewComposers\contactComposer;
 use Illuminate\Support\ServiceProvider;
 use App\Http\ViewComposers\TypeComposer;
 use App\Http\ViewComposers\UserComposer;
@@ -30,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
         view()->composer(['shop','home'], callback:HeaderComposer::class);
         view()->composer(['dashboard'], callback:UserComposer::class);
         view()->composer(['dashboard'], callback:TypeComposer::class);
+        view()->composer(['dashboard'], callback:contactComposer::class);
 
     }
 }

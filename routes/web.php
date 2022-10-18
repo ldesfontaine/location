@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\contactController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\Shop\MainController;
 
@@ -47,8 +48,8 @@ Route::middleware(['auth','admin'])->group(function(){
     Route::post('/editType/{id}', [AdminController::class, 'updateType'])->name('updateType');
     Route::get('/deleteType/{id}', [AdminController::class, 'destroyType'])->name('deleteType');
 
-    Route::get('/uploadfile', [ImageController::class,'index']);
-    Route::post('/uploadfile', [ImageController::class,'store']);
+    Route::get('/deleteContact/{id}', [contactController::class, 'destroy'])->name('deleteContact');
+
 });
 
 
@@ -60,6 +61,8 @@ Route::get('/vehicule/{id}', [MainController::class, 'vehicule'])->name('voir_pl
 
 Route::get('/type/{id}', [MainController::class, 'ShowType'])->name('voir_type_categorie');
 
+Route::get('/contact', [contactController::class, 'create'])->name('contact');
+Route::post('/contact', [contactController::class, 'store'])->name('contact.store');
 
 require __DIR__.'/auth.php';
 

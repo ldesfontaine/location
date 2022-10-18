@@ -4,15 +4,14 @@ namespace App\Http\Controllers\Shop;
 
 use App\Models\Vehicule;
 use Illuminate\Http\Request;
-use function PHPSTORM_META\type;
-use App\Http\Controllers\Controller;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Type;//passe par le provider AppServiceProvider
 
 class MainController extends Controller
 {
-
     public function index()
     {
         $vehicules = \App\Models\Vehicule::with('type')->get();
@@ -31,6 +30,8 @@ class MainController extends Controller
     }
 
 
+
+
     public function ShowType(){
         // $types = Type::where('actif',true)->get();
         // dd($types);
@@ -38,13 +39,32 @@ class MainController extends Controller
         return view('shop.type',compact('vehicules'));
     }
 
+
+
     public function create()
     {
         $vehicules = \App\Models\Vehicule::all();
         return view('CRUD.createVehicule',compact('vehicules'));
     }
 
+
+
+
     public function store(Request $request){
+        $request->validate([
+            'Nom' => 'required',
+            'marque' => 'required',
+            'Prix_HT' => 'required',
+            'description' => 'required',
+            'Roue' => 'required',
+            'Place' => 'required',
+            'carburant' => 'required',
+            'boite_vitesse' => 'required',
+            'couleur' => 'required',
+            'immatriculation' => 'required',
+            'categorie' => 'required',
+        ]);
+
         $vehicule = new Vehicule();
         $vehicule->nom = $request->Nom;
         $vehicule->marque = $request->marque;
@@ -75,6 +95,8 @@ class MainController extends Controller
 
 
 
+
+
         public function edit($id)
     {
         $vehicule = Vehicule::find($id);
@@ -98,10 +120,21 @@ class MainController extends Controller
         $vehicule->couleur = $request->couleur;
         $vehicule->plaque = $request->immatriculation;
         $vehicule->type_id = $request->categorie;
+
+
+
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
+
+        $image_path = public_path().'/vehicule/'.$vehicule->photo_principal;
+        if(File::exists($image_path)) {
+            File::delete($image_path);
+        }
+
+
         if($file = $request->hasFile('image')) {
+            File::delete($image_path);
             $file = $request->file('image') ;
             $fileName = $file->getClientOriginalName() ;
 

@@ -61,18 +61,6 @@
                 <input type="file" class="form-control form-control-sm" id="image" name="image" accept="image/png, image/jpeg, image/jpg">
             </div>
         </div>
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
-
-
-
         <div class="form-group">
             <label for="categorie">Categorie</label>
             <select class="form-control" name="categorie" id="categorie">
@@ -88,4 +76,14 @@
         <button type="submit" class="btn btn-primary">Ajouter</button>
 
     </div>
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
 </x-app-layout>

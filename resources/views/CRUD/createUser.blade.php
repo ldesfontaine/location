@@ -15,11 +15,11 @@
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" name="email" id="email" >
+                <input type="email" class="form-control" name="email" id="email">
             </div>
             <div class="form-group">
                 <label for="pwd">Mot de passe</label>
-                <input type="password" class="form-control" name="pwd" id="pwd" >
+                <input type="password" class="form-control" name="pwd" id="pwd">
             </div>
             <div class="form-group">
                 <label for="role">Role</label>
@@ -31,4 +31,13 @@
             <button type="submit" class="btn btn-primary">Ajouter</button>
         </form>
     </div>
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
 </x-app-layout>

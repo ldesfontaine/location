@@ -81,11 +81,47 @@
                             <span> Ajouter <a href="{{ route('createType', $type->id) }}" class="btn btn-danger"><i class="fa-solid fa-plus"></i></a></span>
                         </tbody>
                     </table>
+                </div>
+
+                <hr>
+
+                {{-- show les contacts --}}
+
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <table class="table table-striped ">
+                        <thead>
+                            <span>Contacts</span>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Message</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{-- {{dd($contacts)}} --}}
+                            @foreach ($contacts as $contact)
+                            <tr>
+                                <th scope="row">{{ $contact->id }}</th>
+                                <td>{{ $contact->name }}</td>
+                                <td>{{ $contact->email }}</td>
+                                <td>{{ $contact->message }}</td>
+                                <td>
+                                    <a onclick="return confirm('Êtes-vous sûrs ?')" href="{{ route('deleteContact', $contact->id) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+
+
+
+
 
 
             </div>
         </div>
-
     </div>
 
 </x-app-layout>
