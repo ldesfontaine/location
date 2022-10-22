@@ -92,11 +92,6 @@ class MainController extends Controller
         $vehicule->save();
         return Redirect::to('/');
     }
-
-
-
-
-
         public function edit($id)
     {
         $vehicule = Vehicule::find($id);
@@ -108,13 +103,33 @@ class MainController extends Controller
     public function update(Request $request, $id)
     {
         $vehicule = Vehicule::find($id);
-        $oldImage = $vehicule->photo_principal;
         $vehicule->nom = $request->Nom;
         $vehicule->marque = $request->marque;
         $vehicule->prix_ht = $request->Prix_HT;
         $vehicule->description = $request->description;
         if($request->image == null){
-            $vehicule->photo_principal = $oldImage;}
+            $vehicule->photo_principal = $vehicule->photo_principal;
+        }else{
+            $vehicule->photo_principal = $request->image;
+            $request->validate([
+                'image' => 'image|mimes:jpeg,png,jpg|max:2048',
+            ]);
+            $image_path = public_path().'/vehicule/'.$vehicule->photo_principal;
+            if(File::exists($image_path)) {
+                File::delete($image_path);
+            }
+
+            if($file = $request->hasFile('image')) {
+                File::delete($image_path);
+                $file = $request->file('image') ;
+                $fileName = $file->getClientOriginalName() ;
+
+                $destinationPath = public_path().'/vehicule' ;
+                $file->move($destinationPath,$fileName);
+                $vehicule->photo_principal = $fileName;
+            }
+           }
+           // dd($vehicule->photo_principal);
         $vehicule->roues = $request->Roue;
         $vehicule->places = $request->Place;
         $vehicule->carburant = $request->carburant;
@@ -125,23 +140,7 @@ class MainController extends Controller
 
 
 
-        $request->validate([
-            'image' => 'image|mimes:jpeg,png,jpg|max:2048',
-        ]);
-        $image_path = public_path().'/vehicule/'.$vehicule->photo_principal;
-        if(File::exists($image_path)) {
-            File::delete($image_path);
-        }
 
-        if($file = $request->hasFile('image')) {
-            File::delete($image_path);
-            $file = $request->file('image') ;
-            $fileName = $file->getClientOriginalName() ;
-
-            $destinationPath = public_path().'/vehicule' ;
-            $file->move($destinationPath,$fileName);
-            $vehicule->photo_principal = $fileName;
-        }
         $vehicule->save();
 
         return Redirect::to('/');
