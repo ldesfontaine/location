@@ -63,6 +63,9 @@ class MainController extends Controller
             'couleur' => 'required',
             'immatriculation' => 'required',
             'categorie' => 'required',
+            'date_premiere_mise_en_circulation' => 'required',
+            'date_rentrée_au_garage' => 'required',
+            'nombre_chevaux_fiscaux' => 'required',
         ]);
 
         $vehicule = new Vehicule();
@@ -78,6 +81,9 @@ class MainController extends Controller
         $vehicule->couleur = $request->couleur;
         $vehicule->plaque = $request->immatriculation;
         $vehicule->type_id = $request->categorie;
+        $vehicule->date_premiere_mise_en_circulation = $request->date_premiere_mise_en_circulation;
+        $vehicule->date_rentrée_au_garage = $request->date_rentrée_au_garage;
+        $vehicule->nombre_chevaux_fiscaux = $request->nombre_chevaux_fiscaux;
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
@@ -137,6 +143,9 @@ class MainController extends Controller
         $vehicule->couleur = $request->couleur;
         $vehicule->plaque = $request->immatriculation;
         $vehicule->type_id = $request->categorie;
+        $vehicule->date_premiere_mise_en_circulation = $request->date_premiere_mise_en_circulation;
+        $vehicule->date_rentrée_au_garage = $request->date_rentrée_au_garage;
+        $vehicule->nombre_chevaux_fiscaux = $request->nombre_chevaux_fiscaux;
 
 
 

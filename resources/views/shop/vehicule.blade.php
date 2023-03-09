@@ -16,15 +16,15 @@
 
         <div class="row justify-content-between">
 
-            <div class="col-6">
+            <div class="col-6 order-lg-0">
                 <div class="card mb-4 box-shadow">
                     <img class="card-img-top" src="{{asset('vehicule/'.$vehicule->photo_principal)}}" alt="Card image cap">
                 </div>
                 <p class="lead text-muted">{{$vehicule->description}}</p>
             </div>
-            <div class="col-6">
 
-                <h1 class="jumbotron-heading">{{$vehicule->nom}} -- {{$vehicule->prix_ht}}€</h1>
+            <div class="col-6 order-lg-1">
+                <h1 class="jumbotron-heading">{{$vehicule->nom}} | {{$vehicule->marque}} <br> Prix : {{$vehicule->prix_ht}}€</h1>
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -56,6 +56,18 @@
                         <tr>
                             <th scope="row">Imatriculation</th>
                             <td>{{$vehicule->plaque}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Mise en circulation</th>
+                            <td>{{$vehicule->date_premiere_mise_en_circulation}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Mise en garage</th>
+                            <td>{{$vehicule->date_rentrée_au_garage}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Chevaux</th>
+                            <td>{{$vehicule->nombre_chevaux_fiscaux}}</td>
                         </tr>
                         <tr>
                             <th scope="row">Action</th>
