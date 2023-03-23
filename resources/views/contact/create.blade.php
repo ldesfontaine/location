@@ -1,7 +1,9 @@
-@extends('shop')
+@extends('annexes')
 @section('content')
 
 <div class="container">
+    <div class="row">
+    </div>
     <div class="row">
         <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
             <h3>Contacter nous</h3>
@@ -28,5 +30,4 @@
         </div>
     </div>
 </div>
-
 @endsection

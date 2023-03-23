@@ -59,5 +59,9 @@ Route::get('/type/{id}', [MainController::class, 'ShowType'])->name('voir_type_c
 Route::get('/contact', [contactController::class, 'create'])->name('contact');
 Route::post('/contact', [contactController::class, 'store'])->name('contact.store');
 
+Route::get('/mention',[MainController::class, 'mention'])->name('mention');
+Route::get('/charte',[MainController::class, 'charte'])->name('charte');
+Route::get('/cgu',[MainController::class, 'cgu'])->name('cgu');
+
 require __DIR__.'/auth.php';
 

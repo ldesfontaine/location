@@ -5,7 +5,9 @@
                 <div class="col-sm-8 col-md-7 py-4">
                     <h4 class="text-white">A propos</h4>
                     <p class="text-info">Nous sommes une agence de location de vehicule, nous vous proposons des vehicules  de toutes marques et de toutes catégories.</p>
-                        <a href="{{ route('contact') }}" class="btn btn-info">Contactez-nous</a>
+                    <a href="{{ route('contact') }}" class="btn btn-info">Contactez-nous</a>
+
+
                         @if (Route::has('login'))
                         @auth
                         <div>
@@ -28,11 +30,15 @@
                                 @endif
                             @endauth
                     </div>
+                    <div class="text-center">
+                        <a href="{{route('mention')}}">Mentions légales</a>
+                        <a href="{{route('charte')}}">Charte de confidentialité</a>
+                        <a href="{{route('cgu')}}">Conditions generale d'utilisation</a>
+                    </div>
                 </div>
             </div>
             @endif
             </div>
-        </div>
     </div>
     <div class="navbar navbar-dark bg-dark box-shadow">
         <div class="container d-flex justify-content-between">

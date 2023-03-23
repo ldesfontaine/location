@@ -84,15 +84,15 @@
         </div>
         <div class="form-group">
             <label for="date_premiere_mise_en_circulation">Date de première mise en circulation</label>
-            <input type="date" class="form-control" name="date_premiere_mise_en_circulation" id="date_premiere_mise_en_circulation" placeholder="date_premiere_mise_en_circulation">
+            <input type="date" class="form-control" name="date_premiere_mise_en_circulation" id="date_premiere_mise_en_circulation" placeholder="date_premiere_mise_en_circulation" value='{{$vehicule->date_premiere_mise_en_circulation}}'>
         </div>
         <div class="form-group">
             <label for="date_rentrée_au_garage">Date de rentrée au garage</label>
-            <input type="date" class="form-control" name="date_rentrée_au_garage" id="date_rentrée_au_garage" placeholder="date_rentrée_au_garage">
+            <input type="date" class="form-control" name="date_rentrée_au_garage" id="date_rentrée_au_garage" placeholder="date_rentrée_au_garage" value='{{$vehicule->date_rentrée_au_garage}}'>
         </div>
         <div class="form-group">
             <label for="nombre_chevaux_fiscaux">Nombre de chevaux fiscaux</label>
-            <input type="number" class="form-control" name="nombre_chevaux_fiscaux" id="nombre_chevaux_fiscaux" placeholder="nombre_chevaux_fiscaux">
+            <input type="number" class="form-control" name="nombre_chevaux_fiscaux" id="nombre_chevaux_fiscaux" placeholder="nombre_chevaux_fiscaux" value='{{$vehicule->nombre_chevaux_fiscaux}}'>
         </div>
             <button type="submit" class="btn btn-primary">Modifier</button>
 
@@ -101,4 +101,3 @@
 
     </div>
 </x-app-layout>
-

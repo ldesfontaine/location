@@ -163,6 +163,16 @@ class MainController extends Controller
     }
 
 
+    public function mention(){
+        return view('shop.mention');
+    }
 
+    public function charte(){
+        return view('shop.charte');
+    }
+
+    public function cgu(){
+        return view('shop.cgu');
+    }
 
 }
