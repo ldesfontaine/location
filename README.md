@@ -1,4 +1,4 @@
-[![MasterHead](https://raw.githubusercontent.com/ldesfontaine/location/main/public/img/logo_md.png)]
+![MasterHead](https://raw.githubusercontent.com/ldesfontaine/location/master/public/img/logo_md.png)
 # Gestion de stock de voitures d'occasion
 Introduction
 Le but de ce projet est de créer un site web permettant à un petit garage de gérer son stock de voitures d'occasion en le liant à son site internet. Les visiteurs du site pourront accéder aux fiches des différents véhicules mis en vente et le garagiste pourra gérer les voitures depuis un back-end sécurisé.
