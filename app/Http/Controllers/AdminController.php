@@ -27,7 +27,7 @@ class AdminController extends Controller
         ]);
 
         $user = new User();
-        $user->name = $request->name;
+        $user->nom = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->pwd);
         $user->admin = $request->role;
@@ -44,7 +44,7 @@ class AdminController extends Controller
     public function update(Request $request, $id){
         $user = User::find($id);
         $oldPassword = $user->password;
-        $user->name = $request->name;
+        $user->nom = $request->name;
         $user->email = $request->email;
         if($request->pwd == null){
             $user->password = $oldPassword;}
@@ -87,7 +87,7 @@ class AdminController extends Controller
 
     public function updateType(Request $request, $id){
         $type = Type::find($id);
-        $type->name = $request->name;
+        $type->nom = $request->name;
         $type->actif = $request->actif;
         $type->save();
         return redirect()->route('dashboard');

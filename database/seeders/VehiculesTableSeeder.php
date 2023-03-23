@@ -27,6 +27,9 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->couleur = 'Blanc';
         $vehicule->plaque = 'AB-123-CD';
         $vehicule->type_id = 1;
+        $vehicule->date_premiere_mise_en_circulation = '2002-01-01';
+        $vehicule->date_rentrée_au_garage = '2021-01-01';
+        $vehicule->nombre_chevaux_fiscaux = 300;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -42,6 +45,9 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->couleur = 'Blanc';
         $vehicule->plaque = 'CD-456-EF';
         $vehicule->type_id = 1;
+        $vehicule->date_premiere_mise_en_circulation = '2002-01-01';
+        $vehicule->date_rentrée_au_garage = '2021-01-01';
+        $vehicule->nombre_chevaux_fiscaux = 300;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -57,6 +63,9 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->couleur = 'Gris';
         $vehicule->plaque = 'HJ-789-IK';
         $vehicule->type_id = 1;
+        $vehicule->date_premiere_mise_en_circulation = '2002-01-01';
+        $vehicule->date_rentrée_au_garage = '2021-01-01';
+        $vehicule->nombre_chevaux_fiscaux = 300;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -72,6 +81,9 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->couleur = 'Noir';
         $vehicule->plaque = 'BF-123-CD';
         $vehicule->type_id = 1;
+        $vehicule->date_premiere_mise_en_circulation = '2002-01-01';
+        $vehicule->date_rentrée_au_garage = '2021-01-01';
+        $vehicule->nombre_chevaux_fiscaux = 300;
         $vehicule->save();
 
 
@@ -88,6 +100,9 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->couleur = 'Gris';
         $vehicule->plaque = 'OD-258-EF';
         $vehicule->type_id = 1;
+        $vehicule->date_premiere_mise_en_circulation = '2002-01-01';
+        $vehicule->date_rentrée_au_garage = '2021-01-01';
+        $vehicule->nombre_chevaux_fiscaux = 300;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -103,6 +118,9 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->couleur = 'Jaune';
         $vehicule->plaque = 'GH-456-IK';
         $vehicule->type_id = 1;
+        $vehicule->date_premiere_mise_en_circulation = '2002-01-01';
+        $vehicule->date_rentrée_au_garage = '2021-01-01';
+        $vehicule->nombre_chevaux_fiscaux = 300;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -118,6 +136,9 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->couleur = 'Noir';
         $vehicule->plaque = 'JK-789-LM';
         $vehicule->type_id = 1;
+        $vehicule->date_premiere_mise_en_circulation = '2002-01-01';
+        $vehicule->date_rentrée_au_garage = '2021-01-01';
+        $vehicule->nombre_chevaux_fiscaux = 300;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -133,6 +154,9 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->couleur = 'Noir';
         $vehicule->plaque = 'NO-123-OP';
         $vehicule->type_id = 1;
+        $vehicule->date_premiere_mise_en_circulation = '2002-01-01';
+        $vehicule->date_rentrée_au_garage = '2021-01-01';
+        $vehicule->nombre_chevaux_fiscaux = 300;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -148,6 +172,9 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->couleur = 'Noir';
         $vehicule->plaque = 'GG-175-KM';
         $vehicule->type_id = 1;
+        $vehicule->date_premiere_mise_en_circulation = '2002-01-01';
+        $vehicule->date_rentrée_au_garage = '2021-01-01';
+        $vehicule->nombre_chevaux_fiscaux = 300;
         $vehicule->save();
 
 
@@ -164,6 +191,9 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->couleur = 'Noir';
         $vehicule->plaque = 'GH-456-IK';
         $vehicule->type_id = 2;
+        $vehicule->date_premiere_mise_en_circulation = '2002-01-01';
+        $vehicule->date_rentrée_au_garage = '2021-01-01';
+        $vehicule->nombre_chevaux_fiscaux = 300;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -179,6 +209,9 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->couleur = 'Rouge';
         $vehicule->plaque = 'GX-469-VK';
         $vehicule->type_id = 2;
+        $vehicule->date_premiere_mise_en_circulation = '2002-01-01';
+        $vehicule->date_rentrée_au_garage = '2021-01-01';
+        $vehicule->nombre_chevaux_fiscaux = 300;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -194,6 +227,9 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->couleur = 'Noir';
         $vehicule->plaque = 'HU-422-PK';
         $vehicule->type_id = 2;
+        $vehicule->date_premiere_mise_en_circulation = '2002-01-01';
+        $vehicule->date_rentrée_au_garage = '2021-01-01';
+        $vehicule->nombre_chevaux_fiscaux = 300;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -209,6 +245,9 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->couleur = 'Vert';
         $vehicule->plaque = 'JH-456-OK';
         $vehicule->type_id = 2;
+        $vehicule->date_premiere_mise_en_circulation = '2002-01-01';
+        $vehicule->date_rentrée_au_garage = '2021-01-01';
+        $vehicule->nombre_chevaux_fiscaux = 300;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -224,6 +263,9 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->couleur = 'Orange';
         $vehicule->plaque = 'ZO-594-FJ';
         $vehicule->type_id = 2;
+        $vehicule->date_premiere_mise_en_circulation = '2002-01-01';
+        $vehicule->date_rentrée_au_garage = '2021-01-01';
+        $vehicule->nombre_chevaux_fiscaux = 300;
         $vehicule->save();
 
         $vehicule= new \App\Models\Vehicule();
@@ -239,6 +281,9 @@ class VehiculesTableSeeder extends Seeder
         $vehicule->couleur = 'Gris';
         $vehicule->plaque = 'SI-485-IS';
         $vehicule->type_id = 2;
+        $vehicule->date_premiere_mise_en_circulation = '2002-01-01';
+        $vehicule->date_rentrée_au_garage = '2021-01-01';
+        $vehicule->nombre_chevaux_fiscaux = 300;
         $vehicule->save();
 
     }
