@@ -27,7 +27,7 @@ class AdminController extends Controller
         ]);
 
         $user = new User();
-        $user->nom = $request->name;
+        $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->pwd);
         $user->admin = $request->role;
@@ -36,27 +36,30 @@ class AdminController extends Controller
         return redirect()->route('dashboard');
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $user = User::find($id);
-        return view('CRUD.editUser',compact('user'));
+        return view('CRUD.editUser', compact('user'));
     }
 
-    public function update(Request $request, $id){
+    public function update(Request $request, $id)
+    {
         $user = User::find($id);
         $oldPassword = $user->password;
-        $user->nom = $request->name;
+        $user->name = $request->name;
         $user->email = $request->email;
-        if($request->pwd == null){
-            $user->password = $oldPassword;}
-        else{
-            $user->password = Hash::make($request->pwd);}
-
+        if ($request->pwd == null) {
+            $user->password = $oldPassword;
+        } else {
+            $user->password = Hash::make($request->pwd);
+        }
         $user->admin = $request->role;
         $user->save();
         return redirect()->route('dashboard');
     }
 
-    public function destroy($id){
+    public function destroy($id)
+    {
         $user = User::find($id);
         $user->delete();
         return redirect()->route('dashboard');
