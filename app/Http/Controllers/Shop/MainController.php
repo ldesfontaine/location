@@ -101,7 +101,8 @@ class MainController extends Controller
         public function edit($id)
     {
         $vehicule = Vehicule::find($id);
-        return view('CRUD.editVehicule',compact('vehicule'));
+        $marqueVehicule = $vehicule->marque ?? '';
+        return view('CRUD.editVehicule',compact('vehicule', 'marqueVehicule'));
     }
 
 
