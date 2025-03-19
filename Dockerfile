@@ -26,6 +26,9 @@ COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 WORKDIR /var/www
 RUN composer install --prefer-dist --no-dev --no-scripts --no-interaction
 
+# Vérifier que le répertoire vendor est créé
+RUN ls /var/www
+
 # Copier le reste de l’application dans le conteneur
 COPY . .
 
